@@ -97,7 +97,7 @@ void SerialColumnElimination(double* pMatrix, double* pVector, int Pivot,
 	int Iter, int Size) {
 	double PivotValue, PivotFactor;
 	PivotValue = pMatrix[Pivot * Size + Iter];
-	//#pragma omp parallel for default(none) shared(PivotValue, PivotFactor)
+	
 	for (int i = 0; i < Size; i++) {
 		if (pSerialPivotIter[i] == -1) {
 			PivotFactor = pMatrix[i * Size + Iter] / PivotValue;
